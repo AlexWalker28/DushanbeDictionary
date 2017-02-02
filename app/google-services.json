@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "74594994630",
+    "firebase_url": "https://dictionary-2acf9.firebaseio.com",
+    "project_id": "dictionary-2acf9",
+    "storage_bucket": "dictionary-2acf9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74594994630:android:79ab9afe7fb18e07",
+        "android_client_info": {
+          "package_name": "com.example.lol.dictionary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74594994630-cqssits0atienk888qn8edgrte9l4p3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBix5x7ZWThouByGqAm8j6tIvqyN2KZUtM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74594994630-cqssits0atienk888qn8edgrte9l4p3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
