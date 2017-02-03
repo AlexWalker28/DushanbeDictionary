@@ -1,17 +1,45 @@
 package com.example.lol.dictionary;
 
-import android.widget.EditText;
-
 /**
  * Created by Windows on 01.02.2017.
  */
 public class Word {
-    private String editText;
-    private String listView;
 
-    public Word (String editText,String listView){
-        this.editText= editText;
-        this.listView= listView;
+    Word(){}
 
+    private String languageOne;
+    private String languageTwo;
+    private String languageThree;
+
+    public Word (String languageOne, String languageTwo, String languageThree){
+        this.languageOne = languageOne;
+        this.languageTwo = languageTwo;
+        this.languageThree = languageThree;
     }
+
+    public String getLanguageOne() {
+        return languageOne;
+    }
+
+    public void setLanguageOne(String languageOne) {
+        this.languageOne = languageOne;
+    }
+
+    public String getLanguageTwo() {
+        return languageTwo;
+    }
+
+    public void setLanguageTwo(String languageTwo) {
+        this.languageTwo = languageTwo;
+    }
+
+    public String getLanguageThree() {
+        return languageThree;
+    }
+
+    public void setLanguageThree(String languageThree) {
+        this.languageThree = languageThree;
+    }
+
+
 }
