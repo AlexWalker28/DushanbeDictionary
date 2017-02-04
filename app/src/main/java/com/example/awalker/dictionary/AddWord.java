@@ -1,4 +1,4 @@
-package com.example.lol.dictionary;
+package com.example.awalker.dictionary;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.example.lol.dictionary;
+package com.example.awalker.dictionary;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.lol.dictionary", appContext.getPackageName());
+        assertEquals("com.example.awaler.dictionary", appContext.getPackageName());
     }
 }

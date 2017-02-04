@@ -1,4 +1,4 @@
-package com.example.lol.dictionary;
+package com.example.awalker.dictionary;
 
 /**
  * Created by Windows on 01.02.2017.
