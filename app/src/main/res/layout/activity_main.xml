@@ -11,50 +11,89 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.dictionary.awalker.dictionary.MainActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="word"
-        android:ems="10"
-        android:id="@+id/searchEditText"
-        android:layout_alignBottom="@+id/translateButton"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/translateButton" />
-
-    <ListView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listView"
-        android:layout_below="@+id/languageOneButton"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:text="language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/languageOneButton"
-        android:layout_below="@+id/searchEditText"
-        android:layout_alignParentStart="true"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:text="language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/searchEditText"
-        android:layout_toEndOf="@+id/languageOneButton"
-        android:id="@+id/languageTwoButton"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"/>
+            <AutoCompleteTextView
+                android:text="AutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/autoCompleteTextView"
+                android:layout_above="@+id/listView"
+                android:layout_toStartOf="@+id/languageThreeButton"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1" />
 
-    <Button
-        android:text="language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/searchEditText"
-        android:layout_toEndOf="@+id/languageTwoButton"
-        android:id="@+id/languageThreeButton"
-        style="@android:style/Widget.Material.Button.Borderless.Colored"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_search"
+                android:id="@+id/translateButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:text="language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchEditText"
+                android:layout_toEndOf="@+id/languageTwoButton"
+                android:id="@+id/languageThreeButton"
+                style="@android:style/Widget.Material.Button.Borderless.Colored"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchEditText"
+                android:layout_toEndOf="@+id/languageOneButton"
+                android:id="@+id/languageTwoButton"
+                style="@android:style/Widget.Material.Button.Borderless.Colored"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/languageOneButton"
+                android:layout_below="@+id/searchEditText"
+                android:layout_alignParentStart="true"
+                style="@android:style/Widget.Material.Button.Borderless.Colored"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="384dp">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listView"
+                android:layout_below="@+id/languageOneButton"
+                android:layout_alignParentStart="true" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -65,14 +104,5 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="17dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_menu_search"
-        android:id="@+id/translateButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
