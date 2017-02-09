@@ -77,6 +77,42 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22367823262:android:bcb99136fd8301b7",
+        "android_client_info": {
+          "package_name": "com.dictionary.awalker.dictionary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22367823262-v7uif3ifs5egqe8jjtd7b32jf531dj7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtQOZ6ZbC02uBGs01vAoUhWRreh9eJ_Sw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22367823262-v7uif3ifs5egqe8jjtd7b32jf531dj7u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

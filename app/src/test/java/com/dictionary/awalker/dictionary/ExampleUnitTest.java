@@ -1,4 +1,4 @@
-package com.example.awalker.dictionary;
+package com.dictionary.awalker.dictionary;
 
 import org.junit.Test;
 
