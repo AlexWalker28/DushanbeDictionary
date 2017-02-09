@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class WordListAdapter extends BaseAdapter {
 
+
+
     private ArrayList<Word> wordsListData;
     private LayoutInflater layoutInflater;
 
@@ -57,6 +59,10 @@ public class WordListAdapter extends BaseAdapter {
     public void add(Word word) {
         wordsListData.add(word);
         notifyDataSetChanged();
+    }
+
+    public ArrayList<Word> getWordsListData() {
+        return wordsListData;
     }
 
     static class ViewHolder {

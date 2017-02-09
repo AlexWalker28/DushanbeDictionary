@@ -3,7 +3,10 @@ package com.dictionary.awalker.dictionary;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -18,13 +21,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText searchEditText;
+    private AutoCompleteTextView autoCompleteTextView;
     private Button buttonVah;
+    private Button buttonRus;
+    private Button buttonEng;
     private ImageButton translateButton;
     private ImageButton addWordButton;
     private WordListAdapter wordListAdapter;
     private ListView listView;
     ArrayList<Word> listData;
+    ArrayList<String> autoCompleteTextViewData;
+    ArrayList<String> vahLanguageData;
+    ArrayList<String> rusLanguageData;
+    ArrayList<String> engLanguageData;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -34,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        searchEditText = (EditText)findViewById(R.id.searchEditText);
+        autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.autoCompleteTextView);
         buttonVah = (Button)findViewById(R.id.languageOneButton);
+        buttonRus = (Button)findViewById(R.id.languageTwoButton);
+        buttonEng = (Button)findViewById(R.id.languageThreeButton);
         translateButton = (ImageButton)findViewById(R.id.translateButton);
         addWordButton = (ImageButton)findViewById(R.id.addWordButton);
         listView = (ListView)findViewById(R.id.listView);
@@ -44,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference().child("Word");
 
         listData = new ArrayList<>();
+        vahLanguageData = new ArrayList<>();
+        rusLanguageData = new ArrayList<>();
+        engLanguageData = new ArrayList<>();
+        autoCompleteTextViewData = new ArrayList<>();
         wordListAdapter = new WordListAdapter(this, listData);
         listView.setAdapter(wordListAdapter);
 
@@ -52,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Word word = dataSnapshot.getValue(Word.class);
                 wordListAdapter.add(word);
+                vahLanguageData.add(word.getLanguageOne());
+                rusLanguageData.add(word.getLanguageTwo());
+                engLanguageData.add(word.getLanguageThree());
             }
 
             @Override
@@ -75,13 +93,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         buttonVah.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
+            autoCompleteTextViewData = vahLanguageData;
            }
        });
+        buttonRus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            autoCompleteTextViewData = rusLanguageData;
+            }
+        });
+        buttonEng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            autoCompleteTextViewData = engLanguageData;
+            }
+        });
+
+        ArrayAdapter<String> autoCompleteTextViewAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line
+                ,autoCompleteTextViewData);
+        autoCompleteTextView.setThreshold(1);
+        autoCompleteTextView.setAdapter(autoCompleteTextViewAdapter);
+
        translateButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
