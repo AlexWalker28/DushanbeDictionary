@@ -22,9 +22,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteTextView;
-    private Button buttonVah;
-    private Button buttonRus;
-    private Button buttonEng;
     private ImageButton translateButton;
     private ImageButton addWordButton;
     private WordListAdapter wordListAdapter;
@@ -44,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.autoCompleteTextView);
-        buttonVah = (Button)findViewById(R.id.languageOneButton);
-        buttonRus = (Button)findViewById(R.id.languageTwoButton);
-        buttonEng = (Button)findViewById(R.id.languageThreeButton);
         translateButton = (ImageButton)findViewById(R.id.translateButton);
         addWordButton = (ImageButton)findViewById(R.id.addWordButton);
         listView = (ListView)findViewById(R.id.listView);
@@ -67,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Word word = dataSnapshot.getValue(Word.class);
                 wordListAdapter.add(word);
-                vahLanguageData.add(word.getLanguageOne());
-                rusLanguageData.add(word.getLanguageTwo());
-                engLanguageData.add(word.getLanguageThree());
+                autoCompleteTextViewData.add(word.getLanguageOne());
+                autoCompleteTextViewData.add(word.getLanguageTwo());
+                autoCompleteTextViewData.add(word.getLanguageThree());
             }
 
             @Override
@@ -93,27 +87,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonVah.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-            autoCompleteTextViewData = vahLanguageData;
-           }
-       });
-        buttonRus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            autoCompleteTextViewData = rusLanguageData;
-            }
-        });
-        buttonEng.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            autoCompleteTextViewData = engLanguageData;
-            }
-        });
-
         ArrayAdapter<String> autoCompleteTextViewAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line
-                ,autoCompleteTextViewData);
+                                                                                  ,autoCompleteTextViewData);
         autoCompleteTextView.setThreshold(1);
         autoCompleteTextView.setAdapter(autoCompleteTextViewAdapter);
 
