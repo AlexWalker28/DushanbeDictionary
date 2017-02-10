@@ -61,9 +61,6 @@ public class WordListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public ArrayList<Word> getWordsListData() {
-        return wordsListData;
-    }
 
     static class ViewHolder {
         TextView translationWordOneTextView;

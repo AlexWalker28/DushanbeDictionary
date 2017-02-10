@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     ArrayList<Word> listData;
     ArrayList<String> autoCompleteTextViewData;
-    ArrayList<String> vahLanguageData;
-    ArrayList<String> rusLanguageData;
-    ArrayList<String> engLanguageData;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -49,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference().child("Word");
 
         listData = new ArrayList<>();
-        vahLanguageData = new ArrayList<>();
-        rusLanguageData = new ArrayList<>();
-        engLanguageData = new ArrayList<>();
         autoCompleteTextViewData = new ArrayList<>();
         wordListAdapter = new WordListAdapter(this, listData);
         listView.setAdapter(wordListAdapter);
