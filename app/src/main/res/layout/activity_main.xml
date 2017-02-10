@@ -61,16 +61,6 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:id="@+id/addWordButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="17dp" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addWordButton"
         android:layout_width="wrap_content"
@@ -78,6 +68,7 @@
         android:layout_margin="16dp"
         android:clickable="true"
         android:src="@drawable/ic_add_black_24dp"
-        app:layout_anchorGravity="bottom|right|end"/>
+        app:layout_anchorGravity="top|left"
+        android:layout_gravity="bottom|right" />
 
 </android.support.design.widget.CoordinatorLayout>
