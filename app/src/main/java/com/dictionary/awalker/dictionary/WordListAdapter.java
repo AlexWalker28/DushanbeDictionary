@@ -23,17 +23,18 @@ public class WordListAdapter extends BaseAdapter implements Filterable {
 
     public WordListAdapter(Context aContext, ArrayList<Word> listData) {
         this.wordsListData = listData;
+        this.filteredListData = listData;
         layoutInflater = LayoutInflater.from(aContext);
     }
 
     @Override
     public int getCount() {
-        return wordsListData.size();
+        return filteredListData.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return wordsListData.get(position);
+        return filteredListData.get(position);
     }
 
     @Override
@@ -54,9 +55,9 @@ public class WordListAdapter extends BaseAdapter implements Filterable {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.translationWordOneTextView.setText(wordsListData.get(position).getLanguageOne());
-        holder.translationTwoTextView.setText(wordsListData.get(position).getLanguageTwo());
-        holder.translationThreeTextView.setText(wordsListData.get(position).getLanguageThree());
+        holder.translationWordOneTextView.setText(filteredListData.get(position).getLanguageOne());
+        holder.translationTwoTextView.setText(filteredListData.get(position).getLanguageTwo());
+        holder.translationThreeTextView.setText(filteredListData.get(position).getLanguageThree());
         return convertView;
     }
 
@@ -76,13 +77,13 @@ public class WordListAdapter extends BaseAdapter implements Filterable {
     @Override
     public Filter getFilter() {
 
-        Filter filter = new Filter() {
+        final Filter filter = new Filter() {
 
             @SuppressWarnings("unchecked")
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
 
-                wordsListData = (ArrayList<Word>) results.values;
+                filteredListData = (ArrayList<Word>) results.values;
                 notifyDataSetChanged();
             }
 
