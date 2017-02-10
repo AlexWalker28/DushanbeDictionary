@@ -3,6 +3,8 @@ package com.dictionary.awalker.dictionary;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     ArrayList<Word> listData;
     ArrayList<String> autoCompleteTextViewData;
+    ArrayAdapter<String> autoCompleteTextViewAdapter;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         autoCompleteTextViewData = new ArrayList<>();
         wordListAdapter = new WordListAdapter(this, listData);
         listView.setAdapter(wordListAdapter);
+        listView.setTextFilterEnabled(true);
 
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -81,10 +85,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> autoCompleteTextViewAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line
+        autoCompleteTextViewAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line
                                                                                   ,autoCompleteTextViewData);
         autoCompleteTextView.setThreshold(1);
         autoCompleteTextView.setAdapter(autoCompleteTextViewAdapter);
+        autoCompleteTextView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                MainActivity.this.wordListAdapter.getFilter().filter(s);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
        translateButton.setOnClickListener(new View.OnClickListener() {
            @Override
