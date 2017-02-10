@@ -1,6 +1,7 @@
 package com.dictionary.awalker.dictionary;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteTextView;
     private ImageButton translateButton;
-    private ImageButton addWordButton;
+    private FloatingActionButton addWordButton;
     private WordListAdapter wordListAdapter;
     private ListView listView;
     ArrayList<Word> listData;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         autoCompleteTextView = (AutoCompleteTextView)findViewById(R.id.autoCompleteTextView);
         translateButton = (ImageButton)findViewById(R.id.translateButton);
-        addWordButton = (ImageButton)findViewById(R.id.addWordButton);
+        addWordButton = (FloatingActionButton) findViewById(R.id.addWordButton);
         listView = (ListView)findViewById(R.id.listView);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
