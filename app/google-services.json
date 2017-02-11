@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "22367823262-k1p0b4ufofqhjii5jqh8lpd861a7a7an.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lol.dictionary",
+            "certificate_hash": "6371058BE4611F15793094CBE577162A6BD48110"
+          }
+        },
+        {
           "client_id": "22367823262-v7uif3ifs5egqe8jjtd7b32jf531dj7u.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -51,6 +59,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "22367823262-nup8efitn0a64qsgdu2m07hkb7cjidoe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.awalker.dictionary",
+            "certificate_hash": "AD381AA809AA1F930017A0A2A7FE81995089DBAE"
+          }
+        },
+        {
           "client_id": "22367823262-v7uif3ifs5egqe8jjtd7b32jf531dj7u.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -86,6 +102,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "22367823262-94d5d5068i6tfeem6nvd4ec3hen4bm4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dictionary.awalker.dictionary",
+            "certificate_hash": "C44235B346230743B083E1B85A4354E0A571F7F4"
+          }
+        },
+        {
+          "client_id": "22367823262-1n4mng1ij9sslmul9qcq6r3kv73p9n5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dictionary.awalker.dictionary",
+            "certificate_hash": "AD381AA809AA1F930017A0A2A7FE81995089DBAE"
+          }
+        },
         {
           "client_id": "22367823262-v7uif3ifs5egqe8jjtd7b32jf531dj7u.apps.googleusercontent.com",
           "client_type": 3
