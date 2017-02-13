@@ -155,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, WordActivity.class);
+                intent.putExtra("vah", listData.get(position).getLanguageOne());
+                intent.putExtra("rus", listData.get(position).getLanguageTwo());
+                intent.putExtra("eng", listData.get(position).getLanguageThree());
                 startActivity(intent);
             }
         });
